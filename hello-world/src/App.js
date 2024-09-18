@@ -1,3 +1,8 @@
+//components
+import FirstComponent from "./components/FirstComponent"
+import OtherComponent from "./components/OtherComponent"
+
+//styles / css
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,6 +13,11 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
 
         <h1>TESTE</h1>
+        
+        <div>
+          <FirstComponent></FirstComponent>
+          <OtherComponent></OtherComponent>
+        </div>
 
         <p>
           Edit <code>src/App.js</code> and save to reload.
