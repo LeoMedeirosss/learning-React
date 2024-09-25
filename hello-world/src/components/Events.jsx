@@ -1,10 +1,24 @@
 const Events = () => {
 
-    const handleMyEvent = (e) =>{
+    const handleMyEvent = (e) => {
         console.log(e);
 
 
     }
+
+    const render = (x) => {
+
+        if(x){
+
+            return <p>renderizou isso</p>
+
+        }  else{
+
+            return <p>renderizou aquilo</p>
+
+        }
+
+    };
 
     return(
 
@@ -20,10 +34,12 @@ const Events = () => {
                     Agora aperte aqui.
                 </button>
             </div>
+            {render(true)}
+            {render(false)}
         </div>
 
     )
 
-}
+};
 
 export default Events;
