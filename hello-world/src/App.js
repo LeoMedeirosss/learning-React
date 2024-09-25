@@ -2,6 +2,7 @@
 import FirstComponent from "./components/FirstComponent"
 import OtherComponent from "./components/OtherComponent"
 import TemplateExpressions from "./components/TemplateExpressions";
+import Events from "./components/Events";
 
 //styles / css
 import logo from './logo.svg';
@@ -19,6 +20,7 @@ function App() {
           <FirstComponent></FirstComponent>
           <OtherComponent></OtherComponent>
           <TemplateExpressions></TemplateExpressions>
+          <Events></Events>
         </div>
 
         <p>
