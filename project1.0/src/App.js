@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import City from "./assets/img-city2.jpeg";
 import ManageData from './components/ManageData';
+import ListRender from './components/ListRender';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         </div>
 
         <ManageData></ManageData>
+
+        <ListRender></ListRender>
 
         <img src={logo} className="App-logo" alt="logo" />
       </header>
