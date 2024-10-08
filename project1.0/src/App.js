@@ -3,6 +3,7 @@ import './App.css';
 import City from "./assets/img-city2.jpeg";
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
+import CondicionalRender from './components/CondicionalRender';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
 
         <ListRender></ListRender>
 
+        <CondicionalRender></CondicionalRender>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div>
