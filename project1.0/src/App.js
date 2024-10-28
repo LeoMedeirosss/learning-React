@@ -23,9 +23,7 @@ function App() {
           <img src={City} alt="cidade2" />
         </div>
 
-
         <ManageData></ManageData>
-
 
         <ListRender></ListRender>
 
