@@ -4,8 +4,12 @@ import City from "./assets/img-city2.jpeg";
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
 import CondicionalRender from './components/CondicionalRender';
+import ShowUsername from './components/ShowUsername';
+import { useState } from 'react';
 
 function App() {
+  const [username] = useState("Rodolfo");
+
   return (
     <div className="App">
       <header className="App-header">
@@ -23,11 +27,13 @@ function App() {
           <img src={City} alt="cidade2" />
         </div>
 
-        <ManageData></ManageData>
+        <ManageData />
 
-        <ListRender></ListRender>
+        <ListRender />
 
-        <CondicionalRender></CondicionalRender>
+        <CondicionalRender />
+
+        <ShowUsername nome={username}/>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div>
