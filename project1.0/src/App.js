@@ -5,6 +5,7 @@ import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
 import CondicionalRender from './components/CondicionalRender';
 import ShowUsername from './components/ShowUsername';
+import DetailsExample from './components/DetailsExample';
 import { useState } from 'react';
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
         <CondicionalRender />
 
         <ShowUsername nome={username}/>
+
+        <DetailsExample marca="LV" cor="Azul" preco={10000} />
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div>
