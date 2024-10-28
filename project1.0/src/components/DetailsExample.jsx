@@ -1,11 +1,11 @@
-const DetailsExample = (props) => {
+const DetailsExample = ({marca, cor, preco}) => {
   return (
     <div>
       <h2>Exemplos de detalhes</h2>
       <ul>
-        <li>Marca: {props.marca}</li>
-        <li>Cor: {props.cor}</li>
-        <li>Preço: R$ {props.preco}</li>
+        <li>Marca: {marca}</li>
+        <li>Cor: {cor}</li>
+        <li>Preço: R$ {preco}</li>
       </ul>
     </div>
   )
