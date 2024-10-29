@@ -7,6 +7,7 @@ import CondicionalRender from './components/CondicionalRender';
 import ShowUsername from './components/ShowUsername';
 import DetailsExample from './components/DetailsExample';
 import Fragment from './components/Fragment';
+import Conteiner from './components/Conteiner';
 import { useState } from 'react';
 
 function App() {
@@ -59,11 +60,12 @@ function App() {
 
         <Fragment propFragment="teste" />
 
+        <Conteiner>
+          <p>conteúdo</p>
+        </Conteiner>
+
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <div>
-        
-      </div>
     </div>
   );
 }
