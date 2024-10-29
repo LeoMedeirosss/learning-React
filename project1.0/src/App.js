@@ -6,6 +6,7 @@ import ListRender from './components/ListRender';
 import CondicionalRender from './components/CondicionalRender';
 import ShowUsername from './components/ShowUsername';
 import DetailsExample from './components/DetailsExample';
+import Fragment from './components/Fragment';
 import { useState } from 'react';
 
 function App() {
@@ -55,7 +56,9 @@ function App() {
             preco={details.preco} 
           />
         ))}
-        
+
+        <Fragment propFragment="teste" />
+
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div>
