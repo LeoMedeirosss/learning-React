@@ -11,6 +11,13 @@ import { useState } from 'react';
 function App() {
   const [username] = useState("Rodolfo");
 
+  const details = [
+    { id: 1, marca: "Ferrari", cor:"Amarela", preco: 15000},
+    { id: 2, marca: "BYD", cor:"Cinza", preco: 17500},
+    { id: 3, marca: "Lambo", cor:"Preta", preco: 23000},
+  ];
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -40,6 +47,15 @@ function App() {
 
         <DetailsExample marca="Gucci" cor="Vermelha" preco={12000}/>
         <DetailsExample marca="Dior" cor="Branca" preco={8500}/>
+
+        {details.map((details) => (
+          <DetailsExample 
+            marca={details.marca} 
+            cor={details.cor} 
+            preco={details.preco} 
+          />
+        ))}
+        
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div>
