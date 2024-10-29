@@ -82,7 +82,7 @@ function App() {
         <ChangeMensagemState handleMensagem={handleMensagem} />
 
         {user.map((user) => (
-          <UserDetails 
+          <UserDetails
             nome={user.nome}
             idade={user.idade}
             profissao={user.profissao}
