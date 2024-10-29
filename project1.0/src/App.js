@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 import City from "./assets/img-city2.jpeg";
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
@@ -8,7 +9,8 @@ import ShowUsername from './components/ShowUsername';
 import DetailsExample from './components/DetailsExample';
 import Fragment from './components/Fragment';
 import Conteiner from './components/Conteiner';
-import { useState } from 'react';
+import Mensagem from './components/Mensagem';
+import ChangeMensagemState from './components/ChangeMensagemState';
 
 function App() {
   const [username] = useState("Rodolfo");
@@ -19,6 +21,11 @@ function App() {
     { id: 3, marca: "Lambo", cor:"Preta", preco: 23000},
   ];
 
+  const [mensagem, setMensagem] = useState("")
+
+  const handleMensagem = (msg) =>{
+    setMensagem(msg);
+  }
 
   return (
     <div className="App">
@@ -63,6 +70,9 @@ function App() {
         <Conteiner>
           <p>conteúdo</p>
         </Conteiner>
+
+        <Mensagem msg={mensagem} />
+        <ChangeMensagemState handleMensagem={handleMensagem} />
 
         <img src={logo} className="App-logo" alt="logo" />
       </header>
