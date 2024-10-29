@@ -11,6 +11,7 @@ import Fragment from './components/Fragment';
 import Conteiner from './components/Conteiner';
 import Mensagem from './components/Mensagem';
 import ChangeMensagemState from './components/ChangeMensagemState';
+import UserDetails from './components/UserDetails';
 
 function App() {
   const [username] = useState("Rodolfo");
@@ -19,6 +20,12 @@ function App() {
     { id: 1, marca: "Ferrari", cor:"Amarela", preco: 15000},
     { id: 2, marca: "BYD", cor:"Cinza", preco: 17500},
     { id: 3, marca: "Lambo", cor:"Preta", preco: 23000},
+  ];
+
+  const user = [
+   {id:1, nome:"Anderson", idade: 20, profissao: "Entregador"},
+   {id:2, nome:"Bruno", idade: 16, profissao: "Estudante"},
+   {id:3, nome:"Carlos", idade: 18, profissao: "Pro Player"},
   ];
 
   const [mensagem, setMensagem] = useState("")
@@ -73,6 +80,14 @@ function App() {
 
         <Mensagem msg={mensagem} />
         <ChangeMensagemState handleMensagem={handleMensagem} />
+
+        {user.map((user) => (
+          <UserDetails 
+            nome={user.nome}
+            idade={user.idade}
+            profissao={user.profissao}
+          />
+        ))}
 
         <img src={logo} className="App-logo" alt="logo" />
       </header>
