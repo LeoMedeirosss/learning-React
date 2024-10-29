@@ -37,6 +37,9 @@ function App() {
         <ShowUsername nome={username}/>
 
         <DetailsExample marca="LV" cor="Azul" preco={10000} />
+
+        <DetailsExample marca="Gucci" cor="Vermelha" preco={12000}/>
+        <DetailsExample marca="Dior" cor="Branca" preco={8500}/>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div>
