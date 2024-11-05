@@ -5,6 +5,8 @@ import Exemplo from './components/Exemplo';
 function App() {
   const n = 10
 
+  const titulo = true
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,8 +18,9 @@ function App() {
       <p>parágrafo do app.js</p>
 
       <h2 style={n < 5 ? ({color:'red'}) : ({color:'green'}) }>CSS-inline dinâmico</h2>
-
       <h2 style={n > 5 ? ({color:'red'}) : ({color:'green'}) }>CSS-inline dinâmico</h2>
+
+      <h2 className={titulo ? "titulo" : "nao-titulo"}>Classes dinâmicasa</h2>
     </div>
   );
 }

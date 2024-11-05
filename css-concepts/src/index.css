@@ -7,3 +7,12 @@ body {
 h1{
   color: blue;
 }
+
+.titulo{
+  color: grey;
+  padding-left: 70px;
+}
+
+.nao-titulo{
+  color: yellow;
+}
