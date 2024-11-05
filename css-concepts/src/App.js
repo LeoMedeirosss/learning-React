@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Exemplo from './components/Exemplo';
+import Modulo from './components/Modulo';
 
 function App() {
   const n = 10
@@ -20,7 +21,11 @@ function App() {
       <h2 style={n < 5 ? ({color:'red'}) : ({color:'green'}) }>CSS-inline dinâmico</h2>
       <h2 style={n > 5 ? ({color:'red'}) : ({color:'green'}) }>CSS-inline dinâmico</h2>
 
-      <h2 className={titulo ? "titulo" : "nao-titulo"}>Classes dinâmicasa</h2>
+      <h2 className={titulo ? "titulo" : "nao-titulo"}>Classes dinâmicas</h2>
+
+      <h2>CSS Module</h2>
+      <Modulo />
+      <p className='modulo'>teste de classe</p>
     </div>
   );
 }
