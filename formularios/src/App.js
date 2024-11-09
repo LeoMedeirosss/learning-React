@@ -11,7 +11,7 @@ function App() {
 
       <div>
         <h1>Formulários</h1>
-        <Forms />
+        <Forms user={{name: "José", email: "Jose123@gmail.com"}} />
       </div>
     </div>
   );
