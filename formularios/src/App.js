@@ -16,6 +16,7 @@ function App() {
           bio: "Sou um advogado", 
           role: "admin",}} 
           />
+          <p>------------------------------</p>
       </div>
     </div>
   );
