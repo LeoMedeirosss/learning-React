@@ -13,6 +13,9 @@ const Forms = (user) => {
     evento.preventDefault();
     console.log("Forms enviado");
     console.log(nome, email);
+
+    setNome('');
+    setEmail('');
   };
 
   return (
