@@ -2,16 +2,22 @@ import { useState } from 'react'
 import './Forms.css'
 
 const Forms = () => {
-  const {nome, setNome} = useState()
-  const {email, setEmail} = useState()
+  const [nome, setNome] = useState()
+  const [email, setEmail] = useState()
 
   const handleNome = (e) =>{
     setNome(e.target.value)
   };
 
+  const handleSubmit = (evento) =>{
+    evento.preventDefault();
+    console.log("Forms enviado");
+    console.log(nome, email);
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
             <label htmlFor="nome">Nome: </label>
             <input type="text" name='nome' 
