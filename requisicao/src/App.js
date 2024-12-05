@@ -1,5 +1,8 @@
 import './App.css';
 import { useState, useEffect } from "react";
+import {useFetch} from "./hooks/useFetch"
+
+const url = "http://localhost:3000/products";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -7,21 +10,21 @@ function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
-  const url = "http://localhost:3000/products";
+  const {data: items} = useFetch(url);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setProducts(data);
-      } catch (error) {
-        console.error("Erro ao buscar produtos:", error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+  //useEffect(() => {
+  // const fetchData = async () => {
+  //    try {
+  //      const res = await fetch(url);
+  //     const data = await res.json();
+  //     setProducts(data);
+  //   } catch (error) {
+  //     console.error("Erro ao buscar produtos:", error);
+  //   }
+  // };
+  //
+  // fetchData();
+  //}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +56,7 @@ function App() {
         <h1>Aprendendo HTTPS Json</h1>
         <h2>Lista de produtos</h2>
         <ul>
-          {products.map((product) => (
+          {items && items.map((product) => (
             <li key={product.id}>
             {product.name} - R$: {product.price}
             </li> 
@@ -85,4 +88,3 @@ function App() {
 }
 
 export default App;
-
