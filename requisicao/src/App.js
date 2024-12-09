@@ -10,7 +10,7 @@ function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
-  const {data: items, httpConfig} = useFetch(url);
+  const {data: items, httpConfig, loading} = useFetch(url);
 
   //useEffect(() => {
   // const fetchData = async () => {
@@ -55,6 +55,7 @@ function App() {
       <div className="conteiner">
         <h1>Aprendendo HTTPS Json</h1>
         <h2>Lista de produtos</h2>
+        {loading && <p>Carregando dados...</p>}
         <ul>
           {items && items.map((product) => (
             <li key={product.id}>
