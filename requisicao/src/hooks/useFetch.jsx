@@ -48,7 +48,6 @@ export const useFetch = (url) => {
     
                 setCallFetch(json);
             }
-    
         };
 
     httpRequest();
