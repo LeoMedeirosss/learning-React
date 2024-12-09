@@ -10,7 +10,7 @@ function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
-  const {data: items} = useFetch(url);
+  const {data: items, httpConfig} = useFetch(url);
 
   //useEffect(() => {
   // const fetchData = async () => {
@@ -34,18 +34,18 @@ function App() {
       price,
     };
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "aplication/json"
-      },
-      body: JSON.stringify(product),
-    });
+  //  const res = await fetch(url, {
+  //  method: "POST",
+    //  headers: {
+      //  "Content-Type": "aplication/json"
+   //   },
+   //   body: JSON.stringify(product),
+    //});
 
-    const addedProducts = await res.json()
+    //const addedProducts = await res.json()
 
-    setProducts((prevProducts) => [... prevProducts, addedProducts])
-
+    //setProducts((prevProducts) => [... prevProducts, addedProducts])
+    httpConfig(product,"POST")
     setName("")
     setPrice("")
   }
