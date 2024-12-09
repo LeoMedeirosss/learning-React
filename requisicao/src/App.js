@@ -10,7 +10,7 @@ function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
-  const {data: items, httpConfig, loading} = useFetch(url);
+  const {data: items, httpConfig, loading, error} = useFetch(url);
 
   //useEffect(() => {
   // const fetchData = async () => {
@@ -50,16 +50,22 @@ function App() {
     setPrice("")
   }
 
+  const handleRemove = (id) => {
+    httpConfig(id, "DELETE");
+  }
+
   return (
     <div className="App">
       <div className="conteiner">
         <h1>Aprendendo HTTPS Json</h1>
         <h2>Lista de produtos</h2>
         {loading && <p>Carregando dados...</p>}
+        {error && <p>{error}</p>}
         <ul>
           {items && items.map((product) => (
             <li key={product.id}>
             {product.name} - R$: {product.price}
+            <button onClick={() => handleRemove(product.id)}>Excluir</button>
             </li> 
           ))}
         </ul>
@@ -80,7 +86,7 @@ function App() {
               name="price" 
               onChange={(e) => setPrice(e.target.value)} />
             </label>
-            
+            {loading && <input type="submit" disabled value="Aguarde"/>}
             {!loading && <input type="submit" value="Criar"/>}
           </form>
         </div>

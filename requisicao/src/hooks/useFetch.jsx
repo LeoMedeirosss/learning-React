@@ -11,6 +11,10 @@ export const useFetch = (url) => {
 
     const [loading, setLoading] = useState(false)
 
+    const [error, setError] = useState(null)
+
+    const [itemID, setItemID] = useState(null)
+
     const httpConfig = (data, method) => {
         if(method === "POST") {
             setConfig({
@@ -22,6 +26,16 @@ export const useFetch = (url) => {
             })
 
             setMethod(method)
+        } else if(method === "DELETE") {
+            setConfig({
+                method,
+                headers: {
+                    "Content-type": "aplication/json"
+                }
+            })
+
+            setMethod(method);
+            setItemID(data);
         }
     }
 
@@ -30,11 +44,19 @@ export const useFetch = (url) => {
         const fetchData = async () => {
             setLoading(true)
 
-            const res = await fetch(url)
+            try{
+                const res = await fetch(url)
 
-            const json = await res.json()
+                const json = await res.json()
+    
+                setData(json)
+            }
 
-            setData(json)
+            catch (error) {
+                console.log(error.message)
+
+                setError("Houve algum erro ao carregar os dados")
+            }
 
             setLoading(false)
         };
@@ -45,6 +67,9 @@ export const useFetch = (url) => {
 
     useEffect(() => {
         const httpRequest = async () => {
+
+            let json
+
             if(method === "POST") {
                 let fetchOptions = [url, config];
     
@@ -53,12 +78,20 @@ export const useFetch = (url) => {
                 const json = await res.json()
     
                 setCallFetch(json);
+            } else if(method === "DELETE") {
+                const deleteurl = `${url}/${itemID}`
+
+                const res = await fetch(deleteurl, config)
+
+                json = await res.json()
             }
+
+            setCallFetch(json)
         };
 
     httpRequest();
     }, [config, method, url])
 
-    return { data, httpConfig, loading };
+    return { data, httpConfig, loading, error };
 
 }
