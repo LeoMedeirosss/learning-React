@@ -5,10 +5,11 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 //paginas
 import Home from './pages/Home'
 import About from './pages/About'
+import Product from './pages/Product';
+import Info from './pages/Info';
 
 //componentes
 import Navbar from './components/Navbar';
-import Product from './pages/Product';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/' element={<Home />}/>
             <Route path='/about' element={<About />}/>
             <Route path='/products/:id' element={<Product />}/>
+            <Route path="/products/:id/info" element={<Info />}/>
           </Routes>
         </BrowserRouter>
     </div>
